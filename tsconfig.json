@@ -1,0 +1,30 @@
+{
+  "extends": "../../../configs/typescript-config.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM"],
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmitOnError": false,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "types": ["node"],
+    "baseUrl": "./",
+    "paths": {
+      "@/types/*": ["./src/types/*"]
+    }
+  },
+  "include": ["index.ts", "src/types/**/*", "tsup.config.ts"],
+  "exclude": ["node_modules", "dist", "build", "src/lib/**/*"]
+}

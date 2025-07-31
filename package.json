@@ -1,8 +1,38 @@
 {
-    "name" : "jsfeat",
-    "version" : "0.0.8",
-    "description" : "JavaScript Computer Vision library",
-    "author" : "Eugene Zatepyakin (http://www.inspirit.ru/)",
-    "files" : "build/jsfeat.js",
-    "main" : "build/jsfeat"
+  "name": "@homingos/jsFeat",
+  "version": "1.0.0",
+  "description": "Computer Vision package with JSFeat wrapper",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "build/jsfeat-module.js"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/concat-jsfeat.js",
+    "build": "npm run prebuild && tsup",
+    "build:watch": "npm run prebuild && tsup --watch",
+    "dev": "npm run build:watch",
+    "clean": "rimraf dist build",
+    "typecheck": "tsc --noEmit",
+    "verify": "node scripts/verify-build.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "computer-vision",
+    "jsfeat",
+    "image-processing"
+  ]
 }
