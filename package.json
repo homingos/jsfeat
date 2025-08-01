@@ -1,13 +1,14 @@
 {
-  "name": "@homingos/jsFeat",
+  "name": "@flamslam/cv",
   "version": "1.0.0",
   "description": "Computer Vision package with JSFeat wrapper",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.esm.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     }
   },
