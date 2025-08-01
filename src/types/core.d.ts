@@ -56,6 +56,16 @@ export declare class pyramid_t {
   build(input: matrix_t, skip_first_level?: boolean): void;
 }
 
+export declare class ransac_params_t {
+  constructor(size?: number, thresh?: number, eps?: number, prob?: number);
+  size: number;
+  thresh: number;
+  eps: number;
+  prob: number;
+
+  update_iters(eps: number, max_iters: number): number;
+}
+
 export declare function get_channel(type: number): number;
 export declare function get_data_type(type: number): number;
 export declare function get_data_type_size(type: number): number;

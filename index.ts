@@ -25,6 +25,7 @@ import type {
   matrix_t,
   keypoint_t,
   pyramid_t,
+  ransac_params_t,
   get_channel,
   get_data_type,
   get_data_type_size
@@ -36,6 +37,7 @@ export type {
   matrix_t,
   keypoint_t,
   pyramid_t,
+  ransac_params_t,
   get_channel,
   get_data_type,
   get_data_type_size
@@ -49,7 +51,7 @@ export type * from './src/types/math';
 export type * from './src/types/linalg';
 export type * from './src/types/matmath';
 export type * from './src/types/cache';
-export type * from './src/types/multiview';
+export type * from './src/types/motion_estimator';
 export type * from './src/types/features';
 export type * from './src/types/optical-flow';
 
@@ -105,6 +107,12 @@ const jsfeat = jsfeatLib as {
     angle?: number
   ) => keypoint_t;
   pyramid_t: new (levels: number) => pyramid_t;
+  ransac_params_t: new (
+    size?: number,
+    thresh?: number,
+    eps?: number,
+    prob?: number
+  ) => ransac_params_t;
 
   // Constants - basic typing as numbers
   U8_t: number;
@@ -151,7 +159,8 @@ const jsfeat = jsfeatLib as {
   linalg: any;
   matmath: any;
   cache: any;
-  multiview: any;
+  motion_estimator: any;
+  motion_model: any; // Alias for motion_estimator
   fast_corners: any;
   yape: any;
   yape06: any;
@@ -220,7 +229,8 @@ export const {
   linalg,
   matmath,
   cache,
-  multiview,
+  motion_estimator,
+  motion_model,
   fast_corners,
   yape,
   yape06,

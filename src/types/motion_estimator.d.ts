@@ -2,17 +2,7 @@
 // src/types/jsfeat/multiview.d.ts
 // =============================================================================
 
-import { matrix_t, keypoint_t } from './core';
-
-export declare class ransac_params_t {
-  constructor(size?: number, thresh?: number, eps?: number, prob?: number);
-  size: number;
-  thresh: number;
-  eps: number;
-  prob: number;
-
-  update_iters(eps: number, max_iters: number): number;
-}
+import { matrix_t, keypoint_t, ransac_params_t } from './core';
 
 export declare class affine2d {
   constructor();

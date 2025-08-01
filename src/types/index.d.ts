@@ -10,7 +10,7 @@ export * from './math';
 export * from './linalg';
 export * from './matmath';
 export * from './cache';
-export * from './multiview';
+export * from './motion_estimator';
 export * from './features';
 export * from './optical-flow';
 export * from './haar';
@@ -22,6 +22,7 @@ import type {
   matrix_t,
   keypoint_t,
   pyramid_t,
+  ransac_params_t,
   get_channel,
   get_data_type,
   get_data_type_size
@@ -67,7 +68,7 @@ import type * as MathNamespace from './math';
 import type * as LinAlgNamespace from './linalg';
 import type * as MatMathNamespace from './matmath';
 import type * as CacheNamespace from './cache';
-import type * as MultiViewNamespace from './multiview';
+import type * as MotionEstimatorNamespace from './motion_estimator';
 import type * as FeaturesNamespace from './features';
 import type * as OpticalFlowNamespace from './optical-flow';
 import type * as HaarNamespace from './haar';
@@ -79,6 +80,7 @@ interface JSFeatInterface {
   data_t: typeof data_t;
   keypoint_t: typeof keypoint_t;
   pyramid_t: typeof pyramid_t;
+  ransac_params_t: typeof ransac_params_t;
 
   // Constants
   U8_t: typeof U8_t;
@@ -121,11 +123,12 @@ interface JSFeatInterface {
 
   // Modules (fully typed)
   imgproc: typeof ImgProcNamespace;
-  math: typeof MathNamespace;
-  linalg: typeof LinAlgNamespace;
-  matmath: typeof MatMathNamespace;
-  cache: typeof CacheNamespace;
-  multiview: typeof MultiViewNamespace;
+  math: typeof MathNamespace; //
+  linalg: typeof LinAlgNamespace; //
+  matmath: typeof MatMathNamespace; //
+  cache: typeof CacheNamespace; //
+  motion_estimator: typeof MotionEstimatorNamespace;
+  motion_model: typeof MotionEstimatorNamespace;
   fast_corners: typeof FeaturesNamespace.fast_corners;
   yape: typeof FeaturesNamespace.yape;
   yape06: typeof FeaturesNamespace.yape06;

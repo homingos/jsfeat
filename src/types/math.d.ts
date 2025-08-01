@@ -53,3 +53,4 @@ export declare function determinant_3x3(
   M32: number,
   M33: number
 ): number;
+export declare function add(a: number, b: number): number;
