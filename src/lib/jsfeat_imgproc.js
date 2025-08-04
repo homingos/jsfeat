@@ -405,7 +405,7 @@
             // derived from CCV library
             resample: function(src, dst, nw, nh) {
                 var h=src.rows,w=src.cols;
-                if (h > nh && w > nw) {
+                if (h >= nh && w >= nw) {
                     dst.resize(nw, nh, src.channel);
                     // using the fast alternative (fix point scale, 0x100 to avoid overflow)
                     if (src.type&jsfeat.U8_t && dst.type&jsfeat.U8_t && h * w / (nh * nw) < 0x100) {
