@@ -2,14 +2,10 @@
   "name": "@flamslam/cv",
   "version": "1.0.0",
   "description": "Computer Vision package with JSFeat wrapper",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.mjs",
+  "main": "build/jsfeat-module.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./build/jsfeat-module.js"
     }
   },
   "files": [
@@ -18,8 +14,8 @@
   ],
   "scripts": {
     "prebuild": "node scripts/concat-jsfeat.js",
-    "build": "npm run prebuild && tsup",
-    "build:watch": "npm run prebuild && tsup --watch",
+    "build": "npm run prebuild",
+    "build:watch": "npm run prebuild",
     "dev": "npm run build:watch",
     "clean": "rimraf dist build",
     "typecheck": "tsc --noEmit",

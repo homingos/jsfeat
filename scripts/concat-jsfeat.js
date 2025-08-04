@@ -48,27 +48,27 @@ files.forEach((file) => {
   }
 });
 
-// Write concatenated file
+// Write standard concat file
 fs.writeFileSync(outputFile, concatenated, 'utf8');
 console.log(`JSFeat concatenated to: ${outputFile}`);
 
-// Also create a module version for our wrapper
-const moduleVersion = `
-// JSFeat Library - Module Export Version
+// Also create a clean ESM module version
+const esmModuleVersion = `
+// JSFeat Library - ESM Export Version
 ${concatenated}
 
-// Export for CommonJS/ES modules
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = jsfeat;
-}
+// Attach to window (optional for browser)
 if (typeof window !== 'undefined') {
   window.jsfeat = jsfeat;
 }
+
+// ESM export
+export default jsfeat;
 `;
 
 fs.writeFileSync(
   path.join(buildDir, 'jsfeat-module.js'),
-  moduleVersion,
+  esmModuleVersion,
   'utf8'
 );
-console.log('Module version created');
+console.log('ESM module version created at: build/jsfeat-module.js');
