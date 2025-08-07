@@ -19,6 +19,7 @@ const files = [
   'jsfeat_yape.js',
   'jsfeat_orb.js',
   'jsfeat_optical_flow_lk.js',
+  'jsfeat_optical_flow_lk_sparse.js',
   'jsfeat_haar.js',
   'jsfeat_bbf.js',
   'jsfeat_export.js'
